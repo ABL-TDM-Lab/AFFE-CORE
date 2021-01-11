@@ -43,6 +43,6 @@ jobs:
         with:
           name: dist-exe
           path: |
-            dist/hello.exe
+            ./dist/hello.exe
 
 
