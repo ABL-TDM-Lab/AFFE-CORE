@@ -1,2 +1,5 @@
+# pre-commit hooks
+pre-commit==2.9.3
+# libraries
 pandas==1.2.0
 numpy==1.19.5

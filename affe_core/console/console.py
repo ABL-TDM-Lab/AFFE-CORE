@@ -11,19 +11,25 @@ class Console(ABC):
     _out: Final[TextIO]
     _actions: list[ConsoleAction]
 
-    def __init__(self, actions: list[ConsoleAction], *, input_io: TextIO = sys.stdin, output_io: TextIO = sys.stdout):
+    def __init__(
+        self,
+        actions: list[ConsoleAction],
+        *,
+        input_io: TextIO = sys.stdin,
+        output_io: TextIO = sys.stdout,
+    ):
         self._in = input_io
         self._out = output_io
         self._actions = sorted(actions, key=lambda action: action.serial)
-        self._writeln('Hello!')
+        self._writeln("Hello!")
 
     def show_menu(self):
-        self._writeln('Please Select an Action:')
+        self._writeln("Please Select an Action:")
         for action in self._actions:
             self._writeln(action)
 
     def _writeln(self, s: Any):
-        self._out.write(f'{s}\n')
+        self._out.write(f"{s}\n")
 
 
 class CLIConsole(Console):
