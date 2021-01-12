@@ -37,7 +37,7 @@ jobs:
           pytest
       - name: Build dist executable
         run: |
-          python -OO -m PyInstaller -F affe_core/hello.py
+          pyinstaller hello.spec
       - name: Archive built executable
         uses: actions/upload-artifact@v2
         with:
